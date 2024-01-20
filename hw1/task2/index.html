@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const body = document.querySelector('body');
+        const ol = document.createElement('ol');
+        const employees = [
+            {
+                firstName: 'Иван',
+                lastName: 'Иванов'
+            },
+            {
+                firstName: 'Пётр',
+                lastName: 'Петров'
+            },
+            {
+                firstName: 'Алексей',
+                lastName: 'Алексеев'
+            },
+            {
+                firstName: 'Александр',
+                lastName: 'Александров'
+            },
+            {
+                firstName: 'Дмитрий',
+                lastName: 'Дмитров'
+            }
+        ];
+
+        employees.forEach((el) => {
+            const li = document.createElement('li');
+            li.textContent = `${el.firstName} ${el.lastName}`;
+            ol.append(li);
+        })
+
+        body.append(ol);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calculator = {
+            checkErrors: (a, b, operation) => {
+                if (typeof a !== 'number' || typeof b !== 'number') {
+                    console.log('Ошибка: оба аргумента должны быть числами');
+                    return true;
+                }
+
+                if (operation === '/' && b === 0) {
+                    console.log('Ошибка: деление на ноль недопустимо');
+                    return true;
+                }
+
+                return false;
+            },
+            sum: function (a, b) {
+                return !this.checkErrors(a, b) && a + b;
+            },
+            sub: function (a, b) {
+                return !this.checkErrors(a, b) && a - b;
+            },
+            multiply: function (a, b) {
+                return !this.checkErrors(a, b) && a * b;
+            },
+            division: function (a, b) {
+                return !this.checkErrors(a, b, '/') && a / b;
+            }
+        };
+
+        console.log(calculator.sum(10, 10));
+        console.log(calculator.sub(10, 10));
+        console.log(calculator.multiply(10, 10));
+        console.log(calculator.division(10, 10));
+    </script>
+</body>
+</html>
